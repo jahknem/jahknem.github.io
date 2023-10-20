@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Websocket Terminal for RDM53</title>
+<link rel="stylesheet" type="text/css" href="RDM53Style.css" />
+
+<!--
+	This file is the RDM Webinterface
+	Date: 2019 07 04
+	Author: Pascal Pfeiffer
+-->
+</head>
+<body>
+
+
+<div id="PageContent">
+	
+	<h1><a href='/Tools/WebsocketTerminal.html' target="_self" >Websocket Terminal for RDM53</a> </h1><br>
+	<div>
+	last update: 16 12 2019 <br> <br> <br>
+	Change IP Address: 	<input id="IPInputString" type="url" style="width:30em" placeholder="ws://xxx.xxx.xxx.xxx:xx"/>
+	<button type="button" id="buttonChangeIP" onclick="refreshIPAdress(id);" value="IPInputString">Change IP</button></br>
+	Server IP Adress: 	<span id="WebSocketIPScreen"></span>
+						<button type="button" id="IPSocket" onclick="EndWebsocketClient();" value="IPInput1">Disconnect</button><br>
+	Status: 			<span id="WebSocketConnectionStateScreen"> disconnected </span>
+	<button type="button" id="buttonRefreshConnection" onclick="retryConnection()">Retry Connection</button>
+	<br>
+	</div>
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<button class="collapsible"><h2>Raw Data</h2></button>
+	<div class="content">
+	String Command: 			<input id="TerminalInputStr" type="text" style="width:40em" placeholder="Enter String commands!" />
+						<button type="button" id="websocketStrCmdSend" onclick="sendCommandOnClick(value);" value="TerminalInputStr">Send</button></br>
+	Hex Command:		<input id="TerminalInputHex" type="text" style="width:40em" placeholder="Enter Hex commands!" />
+						<button type="button" id="websocketHexCmdSend" onclick="WebHexCmdSend(value);" value="TerminalInputHex">Send</button></br>
+	Sent strings: </br>
+	<textarea name="text" id="commandStore" style="width:40%" rows="10" readonly placeholder="Sent data appears here..." ></textarea>
+	<textarea name="text" id="receiveStore" style="width:40%" rows="10" readonly placeholder="Received data appears here..." ></textarea><br>
+	<textarea name="text" style="width:40%" id="StoreHexSent" rows="10" readonly placeholder="Sent Hex values appear here" ></textarea>
+	<textarea name="text" style="width:40%" id="StoreHexReceived" rows="10" readonly placeholder="Received Hex values appear here" ></textarea></br>
+    <textarea name="text" style="width:81%" id="AllStore" rows="10" readonly placeholder="All data appears here..."></textarea>
+	</div>
+	
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<button class="collapsible"><h2>Calibration</h2></button>
+	<div class="content">
+		<button type="button" id="buttonCalibrateMagnetometer" onclick="WebHexCmdSend(id);" value="11030100000000000012">Calibrate Magnetometer</button></br>
+		<table>
+		<tr>
+			<th> <button type="button" id="buttonGetXOffet" onclick="WebHexCmdSend(id);" value="1103031F000000000012">Get x Offset</button></th>
+			<th> <div id="buttonGetXOffsetDisplay">none</div></th>
+			<th> <button type="button" id="buttonGetXScale" onclick="WebHexCmdSend(id);"value="11030323000000000012">Get x Scale</button></th>
+			<th> <div id="buttonGetXScaleDisplay">none</div></th>
+			<th> <button type="button" id="buttonGetKp" onclick="WebHexCmdSend(id);"value="11030326000000000012">Get Proportional Value</button></th>
+			<th> <div id="buttonGetKpDisplay">none</div></th>
+		</tr><tr>
+			<th><button type="button" id="buttonGetYOffet" onclick="WebHexCmdSend(id);" value="11030320000000000012">Get y Offset</button></th>
+			<th><div id="buttonGetYOffsetDisplay">none</div></th>
+			<th> <button type="button" id="buttonGetYScale" onclick="WebHexCmdSend(id);"value="11030324000000000012">Get y Scale</button></th>
+			<th> <div id="buttonGetYScaleDisplay">none</div></th>
+			<th> <button type="button" id="buttonGetKi" onclick="WebHexCmdSend(id);"value="11030327000000000012">Get Integral Value</button></th>
+			<th> <div id="buttonGetKiDisplay">none</div></th>
+		</tr><tr>
+			<th><button type="button" id="buttonGetZOffet" onclick="WebHexCmdSend(id);" value="11030321000000000012">Get z Offset</button></th>
+			<th><div id="buttonGetZOffsetDisplay">none</div></th>
+			<th> <button type="button" id="buttonGetZScale" onclick="WebHexCmdSend(id);"value="11030325000000000012">Get z Scale</button></th>
+			<th> <div id="buttonGetZScaleDisplay">none</div></th>
+		</tr><tr>
+			<th><button type="button" id="buttonGetAVGScale" onclick="WebHexCmdSend(id);" value="11030322000000000012">Get avg scale</button></br></th>
+			<th><div id="buttonGetGetAVGScaleDisplay">none</div></th>
+		</tr>
+		</table>
+	</br>
+		<input id="CalibrationInput" type="text" style="width:40em" placeholder="Float"/>
+		<button type="button" id="buttonSendXOffset" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send x Offset</button>
+		<button type="button" id="buttonSendYOffset" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send y Offset</button>
+		<button type="button" id="buttonSendZOffset" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send z Offset</button>
+		<button type="button" id="buttonSendAVGScale" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send avg scale</button>
+	</br>
+		<button type="button" id="buttonSendXScale" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send x Scale</button>
+		<button type="button" id="buttonSendYScale" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send y Scale</button>
+		<button type="button" id="buttonSendZScale" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send z Scale</button>
+	</br>
+		<button type="button" id="buttonSendKp" onclick="WebFloatToHexCmdSend(id);" value="11030321000000000012">Send Proportional Value</button>
+		<button type="button" id="buttonSendKi" onclick="WebFloatToHexCmdSend(id);" value="11030322000000000012">Send Integral Value</button>
+	</div>
+	
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<button class="collapsible"><h2>Device Values</h2></button>
+	<div class="content">
+		<table>
+			  <tr>
+				<th><button type="button" id="buttonBatteryStatus" onclick="WebHexCmdSend(id);" value="11030310000000000012">Battery status</button></th>
+				<th><div id="BatteryStatusDisplay"></div></th>
+				
+				<td><button type="button" id="buttonLidar0Values" onclick="WebHexCmdSend(id);" value="11030300000000000012">Lidar 0</button></td>
+				<td><div id="buttonLidar0ValuesDisplay">none</div></td>
+				
+				<td><button type="button" id="buttonLidar1Values" onclick="WebHexCmdSend(id);" value="11030301000000000012">Lidar 1</button></td>
+				<td><div id="buttonLidar1ValuesDisplay">none</div></td>
+				
+				<td><button type="button" id="buttonLidar2Values" onclick="WebHexCmdSend(id);" value="11030302000000000012">Lidar 2</button></td>
+				<td><div id="buttonLidar2ValuesDisplay">none</div></td>
+				
+				<td><button type="button" id="buttonLidar3Values" onclick="WebHexCmdSend(id);" value="11030303000000000012">Lidar 3</button></td>
+				<td><div id="buttonLidar3ValuesDisplay">none</div></td>
+			  </tr>
+			  <tr>
+				<td><button type="button" id="buttonUltrasonicValues" onclick="WebHexCmdSend(id);" value="11030308000000000012">Ultrasonic values</button></td>
+				<td><div id="UltrasonicValuesDisplay">none</div></td>
+
+				<td><button type="button" id="buttonLidar6Values" onclick="WebHexCmdSend(id);" value="11030306000000000012">Lidar 6</button></td>
+				<td><div id="buttonLidar6ValuesDisplay">none</div></td>
+				
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td><button type="button" id="buttonLidar4Values" onclick="WebHexCmdSend(id);" value="11030304000000000012">Lidar 4</button></td>
+				<td><div id="buttonLidar4ValuesDisplay">none</div></td>
+				
+			  </tr>
+			  <tr>
+				<td> </td>
+				<td> </td>
+				<td><button type="button" id="buttonLidar5Values" onclick="WebHexCmdSend(id);" value="11030305000000000012">Lidar 5</button></td>
+				<td><div id="buttonLidar5ValuesDisplay">none</div></td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			<tr>				
+				<td><button type="button" id="buttonSpeedValues" onclick="WebHexCmdSend(id);" value="1103031B000000000012">Speed</button></td>
+				<td><div id="buttonSpeedValuesDisplay">none</div></td>
+				<td> </td>
+				<td> </td>
+
+				<td> </td>
+				<td> </td>
+				<td><button type="button" id="buttonCSValues" onclick="WebHexCmdSend(id);" value="1103031A000000000012">Color Sensor</button> </td>
+				<td><div id="CSDisplay" style="border-style: solid; width: 1em; height: 1em"></div> </td>
+		</table> 
+		<table>
+			<tr>
+				<th><button type="button" id="buttonLTFLValues" onclick="WebHexCmdSend(id);" value="11030311000000000012">LT FL</button></th>
+				<th><div id="LTFLDisplay" style="border-style: solid; width: 1em; height: 1em"></div></th>
+				<th><button type="button" id="buttonLTFRValues" onclick="WebHexCmdSend(id);" value="11030312000000000012">LT FR</button></th>
+				<th><div id="LTFRDisplay" style="border-style: solid; width: 1em; height: 1em"></div></th>
+				<th><button type="button" id="buttonLTFLRawValues" onclick="WebHexCmdSend(id);" value="1103030C000000000012">LT FL Raw</button></th>
+				<th><div id="LTFLRawDisplay"></div></th>
+				<th><button type="button" id="buttonLTFRRawValues" onclick="WebHexCmdSend(id);" value="1103030D000000000012">LT FR Raw</button></th>
+				<th><div id="LTFRRawDisplay"></div></th>
+			</tr>
+			<tr>
+				<th><button type="button" id="buttonLTBLValues" onclick="WebHexCmdSend(id);" value="11030313000000000012">LT BL</button></th>
+				<th><div id="LTBLDisplay" style="border-style: solid; width: 1em; height: 1em"></div></th>
+				<th><button type="button" id="buttonLTBRValues" onclick="WebHexCmdSend(id);" value="11030314000000000012">LT BR</button></th>
+				<th><div id="LTBRDisplay" style="border-style: solid; width: 1em; height: 1em"></div></th>
+				<th><button type="button" id="buttonLTBLRawValues" onclick="WebHexCmdSend(id);" value="1103030E000000000012">LT BL Raw</button></th>
+				<th><div id="LTBLRawDisplay"></div></th>
+				<th><button type="button" id="buttonLTBRRawValues" onclick="WebHexCmdSend(id);" value="1103030F000000000012">LT BR Raw</button></th>
+				<th><div id="LTBRRawDisplay"></div></th>
+			</tr>
+		</table>
+		<button type="button" id="buttonGetHeadingValues" onclick="WebHexCmdSend(id);" value="11030316000000000012">Heading in Deg</button>
+		<div id="GetHeadingDisplay"></div><br>
+	</div>
+	
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<button class="collapsible"><h2>Remote Control and Gamepad</h2></button>
+	<div class="content">
+		<h2>Remote Control</h2>
+		To enable Remote Control you first have to enable "Remote Control Static".
+		<button type="button" onclick="OnJoystickConnect();" value="Joystick">Connect Joystick</button>
+		<button type="button" onclick="OnJoystickDisconnect();" value="JoystickDisconnect">Disconnect Joystick</button>
+		<h2>Static Controls</h2>
+		<button type="button" id="buttonRemoteSetDirectionForewards" onclick="WebHexCmdSend(id);" value="11030001000000008012">Force Forewards</button>
+		</br>
+		<button type="button" id="buttonRemoteForewardForceMax" onclick="WebHexCmdSend(id);" value="1103000000000001FF12">Forewards Force Max Speed</button>
+		<button type="button" id="buttonRemoteForewardForceMin" onclick="WebHexCmdSend(id);" value="11030000000000017012">Forewards Force Min Speed</button>
+		<button type="button" id="buttonRemoteForewardForceStop" onclick="WebHexCmdSend(id);" value="11030000000000010012">Forewards Force Stop</button>
+		<button type="button" id="buttonRemoteBackwardsForceMin" onclick="WebHexCmdSend(id);" value="11030000000000008F12">Backwards Force Min Speed</button>
+		<button type="button" id="buttonRemoteBackwardsForceMax" onclick="WebHexCmdSend(id);" value="11030000000000000012">Backwards Force Max Speed</button>
+	</div>
+	
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<button class="collapsible"><h2>Quick Commands</h2></button>
+	<div class="content">
+		<h2> Modes </h2>
+		<button type="button" id="buttonChill" onclick="WebHexCmdSend(id);" value="11020200000000000012">Chill</button></br>
+		<button type="button" id="buttonRCS0" onclick="WebHexCmdSend(id);" value="11020100000000000012">Remote Control Static</button></br>
+		<button type="button" id="buttonRCD0" onclick="WebHexCmdSend(id);" value="11020100000000001012">Remote Control Dynamic</button></br>
+		<button type="button" id="buttonRebootRDM0" onclick="WebHexCmdSend(id);" value="11020300000000000012">Reboot RDM53</button></br>
+		<button type="button" id="buttonWiFiNotificationSender" onclick="WebHexCmdSend(id);" value="11030315000000000012">wiFiNotificationSender</button></br>
+		<h2> Autonomy </h2>
+		<button type="button" id="buttonAutonomous0" onclick="WebHexCmdSend(id);" value="11020000000000000012">Autonomous 0 - only line Track</button></br>
+		<button type="button" id="buttonAutonomous1" onclick="WebHexCmdSend(id);" value="11020000000000000112">Autonomous 1 - only lidar</button></br>
+		<button type="button" id="buttonAutonomous2" onclick="WebHexCmdSend(id);" value="11020000000000000212">Autonomous 2 - lidar and line Track</button></br>
+		<button type="button" id="buttonAutonomous3" onclick="WebHexCmdSend(id);" value="11020000000000000312">Autonomous 3 - RNG Lab</button></br>
+		<button type="button" id="buttonAutonomous4" onclick="WebHexCmdSend(id);" value="11020000000000000412">Autonomous 4</button></br>
+	</div>	
+</div>
+<script src="RDM53TerminalScripts.js"></script> 
+</body>
+</html>
