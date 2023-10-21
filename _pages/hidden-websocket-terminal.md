@@ -1,4 +1,4 @@
 ---
 layout: WebsocketTerminalRDM
-permalink: /hidden-websocket-terminal/
+permalink: /rdm53/
 ---

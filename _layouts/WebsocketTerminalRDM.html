@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Websocket Terminal for RDM53</title>
-<link rel="stylesheet" type="text/css" href="RDM53Style.css" />
+<link rel="stylesheet" type="text/css" href="{{ '/assets/css/RDM53Style.css' | relative_url }}" />
 
 <!--
 	This file is the RDM Webinterface
@@ -16,7 +16,7 @@
 
 <div id="PageContent">
 	
-	<h1><a href='/Tools/WebsocketTerminal.html' target="_self" >Websocket Terminal for RDM53</a> </h1><br>
+	<h1><a href='/rdm53.html' target="_self" >Websocket Terminal for RDM53</a> </h1><br>
 	<div>
 	last update: 16 12 2019 <br> <br> <br>
 	Change IP Address: 	<input id="IPInputString" type="url" style="width:30em" placeholder="ws://xxx.xxx.xxx.xxx:xx"/>
@@ -201,6 +201,6 @@
 		<button type="button" id="buttonAutonomous4" onclick="WebHexCmdSend(id);" value="11020000000000000412">Autonomous 4</button></br>
 	</div>	
 </div>
-<script src="RDM53TerminalScripts.js"></script> 
+<script src="{{ '/assets/js/RDM53TerminalScripts.js' | relative_url }}"></script> 
 </body>
 </html>
