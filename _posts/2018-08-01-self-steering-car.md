@@ -18,6 +18,9 @@ The [RDM53](https://github.com/paspf/RDM53-1) was the first hardware project at 
 
 My team chose to create the autonomous Vehicle using as scaffold the [Joy-It Robot Car Kit 4WD](https://joy-it.net/de/products/Robot03). As the controlling computer we chose to use the WeMos LolinD32, a board that uses the ESP32 microcontroller. The ESP32 is a very powerful microcontroller, which has a dual core processor, 4MB of RAM and, as we thought at the time, enough GPIO pins to access all motors and sensors. Due to more sensors than initially planned being added, we also added a port expander of the type PCF85741 to the setup. It also has integrated WiFi and Bluetooth, which we used to communicate with the robot. The code running on the ESP32 was written in C++ using the Arduino Framework.
 
+Below there is an interesting video created by Prof. Arndt:
+<iframe width="560" height="315" src="https://www.thm.de/iem/images/Redaktion/News-Bilder/PMTI-Rennen.mp4" frameborder="0" allowfullscreen></iframe>
+
 ## Components
 
 | Component  | Type | Function |
