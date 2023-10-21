@@ -12,14 +12,13 @@ tags:
 
 # RDM53
 
-This project has already been finished for some time, but I never got around to actually write a blogpost about it. I will try to keep it short and simple, but if you have any questions feel free to contact me on twitter or via mail (you can find my mail address on my [about page](/about/) or add an issue to the respective repository on [github](www.github.com/jahknem)). 
+This project has already been finished for some time, but I never got around to actually write a blogpost about it. I will try to keep it short and simple, but if you have any questions feel free to contact me on twitter or via mail (you can find my mail address on my [about page](/about/) or add an issue to the respective repository on [github](https://www.github.com/jahknem)). 
 
 The [RDM53](https://github.com/paspf/RDM53-1) was the first hardware project at the THM in which I was involved. It was part of the project management module, in which we were to create a scenario in which 2 autonomous wheeled vehicles were to try to compete to get to their respective goals first. They each had a candle on top, while an autonomous robot was to try to extinguish the candle. Each robot was build by one of 3 teams. More information about this project can be found on the [project page](https://www.thm.de/iem/fachbereich/service/aktuelles/abschlussrennen-autonome-fahrzeuge-im-modul-projektmanagement.html) of the THM.
 
 My team chose to create the autonomous Vehicle using as scaffold the [Joy-It Robot Car Kit 4WD](https://joy-it.net/de/products/Robot03). As the controlling computer we chose to use the WeMos LolinD32, a board that uses the ESP32 microcontroller. The ESP32 is a very powerful microcontroller, which has a dual core processor, 4MB of RAM and, as we thought at the time, enough GPIO pins to access all motors and sensors. Due to more sensors than initially planned being added, we also added a port expander of the type PCF85741 to the setup. It also has integrated WiFi and Bluetooth, which we used to communicate with the robot. The code running on the ESP32 was written in C++ using the Arduino Framework.
 
 Below there is an interesting video created by Prof. Arndt:
-<iframe width="560" height="315" src="https://www.thm.de/iem/images/Redaktion/News-Bilder/PMTI-Rennen.mp4" frameborder="0" allowfullscreen></iframe>
 
 ## Components
 
