@@ -9,35 +9,31 @@ tags:
   - roborock
 ---
 
-# Streamlining Tailscale Installation on Roborock Vacuums
 
-Sometimes, the simplest solutions can be the most effective. This project is a straightforward, yet useful script to install Tailscale on a Roborock vacuum robot. It's not about reinventing the wheel, but about making practical improvements to our daily tech. Here's a rundown of what it entails and why it's useful.
+# Installation von Tailscale auf einem Roborock Staubsaugerroboter
 
-## The Idea
+## Einleitung
 
-The primary goal was to enable Tailscale, a private network service, on a Roborock vacuum. This integration is about enhancing the device's functionality with a secure, remote access capability.
+In diesem Blogpost beschreibe ich die Erstellung eines Tailscale Installers für Valetudo Roborock Vacuum Robots. Ursprünglich habe ich den Roborock S50 Staubsauger meiner Schwiegereltern-in-Spe neu eingerichtet. Die Ansaugpumpe war ausgefallen, aber das ist nicht Thema dieses Blogposts. Bei der Reparatur habe ich den Roboter resettet und dabei auch Valetudo, Root und die Sprachausgabe verloren. Nach der Installation von Valetudo wollte ich die deutsche Sprachausgabe wiederherstellen, scheiterte aber an der unvollständigen GUI und dem fehlenden SFTP-Server. Um das später fixen zu könne, installierte ich Tailscale um so aus der Ferne darafu zugreifen zu kpönnen. Die Installation war nicht ganz einfach, da bisherige dokumentierte Versuche entweder fehlerhaft oder unvollständig sind. Daher das Tailscale Installer Skript.
 
-## The Script
+## Schritte der Installation
 
-The script, written in ash shell, is concise and purposeful. It focuses on two main tasks:
+1. **Erkennung der CPU-Architektur:** Zuerst identifizierte ich die CPU-Architektur des Staubsaugers mit `uname -m`, um den passenden Tailscale-Downloadlink zu ermitteln.
 
-1. **Detecting the CPU Architecture**: This is to ensure the correct version of Tailscale is downloaded for the specific model of the Roborock.
-2. **Downloading and Relocating Tailscale**: It then fetches the appropriate package and moves it to the necessary directory for installation.
+2. **Download und Installation:** Das Tailscale-Paket wurde in die `/mnt/data`-Partition heruntergeladen und entpackt. Anschließend wurden die Tailscale-Executables (`tailscale` und `tailscaled`) in `/usr/local/bin` kopiert.
 
-The script includes necessary checks to ensure each step is completed successfully, thereby minimizing potential errors during the installation.
+3. **Daemon-Problematik:** Aufgrund des Fehlens von systemd oder init.d auf dem Roborock nutzte ich start-stop-daemon, um Tailscaled  lassen.
 
-## GitHub Repository
+4. **Automatischer Start beim Booten:** Durch Hinzufügen des Startbefehls in die `rc.local`-Datei startete Tailscale automatisch beim Booten des Systems. Dem Befehl wird noch "--state=/mnt/data/tailscale/tailscaled.state" angehängt, um den Speicherort des Tailscale-Status zu definieren. Da Roborock alle Partitionen außer der `/mnt/data`-Partition beim Booten zurücksetzt, würde der Status verloren gehen, wenn er nicht in der `/mnt/data`-Partition gespeichert würde.
 
-For those interested, the script is available on GitHub: [Roborock-Tailscale-Installer](https://github.com/jahknem/Roborock-Tailscale-Installer). The repository is straightforward, hosting the script and a README for easy installation.
+5. **Anpassung des Hostnamens:** Um den Staubsaugerroboter unter dem korrekten Namen in der Tailscale-App anzeigen zu lassen, passte ich den Hostnamen in den Dateien `/etc/hostname` und `/etc/hosts` an.
 
-## Practical Use
+## Fazit
 
-This integration isn't about complex challenges; it's about practicality and enhancing the functionality of everyday devices. By enabling Tailscale on a Roborock vacuum, users gain more control and accessibility, which is a step forward in home automation.
+Das gesamte Verfahren habe ich in einem Skript zusammengefasst, das in meinem GitHub-Repository [Robrorock-Tailscale-Installer](https://github.com/jahknem/Roborock-Tailscale-Installer) zu finden ist. Im Prinzip ist das Skript ziemlich einfach, aber es spart einige Schritte.
 
-## Closing Thoughts
+## Quellen
 
-This project is a testament to how even simple scripts can significantly impact how we interact with our technology. It's a small, yet practical stride in the realm of home automation and networking.
-
+- [Gist](https://gist.github.com/johnDorian/4c530adfd08d70108c08e8bbc6368091) by [johnDorian](https://gist.github.com/johnDorian)
+- [Tailscale Sucks](https://tailscale.dev/blog/tailscale-sucks) by [Tailscale](https://tailscale.com/)
 ---
-
-For those interested in the technical aspects or looking to try it out, feel free to visit the [GitHub repository](https://github.com/jahknem/Roborock-Tailscale-Installer). Your feedback and contributions are always welcome!
