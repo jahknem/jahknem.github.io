@@ -17,6 +17,8 @@ I am **Jan Kühnemund**, a freelance consultant specializing in **Site Reliabili
 
 Born in 1995, I combine academic knowledge with practical technical expertise. My journey started with an apprenticeship as an **IT Systems Electronics Technician** and led to a **Bachelor of Engineering in Computer Engineering**. This combination gives me a deep understanding from hardware to high-level software architecture.
 
+[View CV](/en/cv/){: .btn .btn--primary}
+
 ## Services
 
 My focus is on robust, scalable solutions:

@@ -17,6 +17,8 @@ Ich bin **Jan Kühnemund**, spezialisiert auf **Site Reliability Engineering (SR
 
 Geboren 1995, verbinde ich akademisches Wissen mit handfester technischer Expertise. Mein Weg führte über eine Ausbildung zum **IT-Systemelektroniker** zum Studium des **Computer Engineering** (Bachelor of Engineering). Diese Kombination ermöglicht mir ein tiefes Verständnis von Hardware bis zur High-Level-Softwarearchitektur.
 
+[Zum Lebenslauf (CV)](/cv/){: .btn .btn--primary}
+
 ## Leistungen
 
 Mein Fokus liegt auf robusten, skalierbaren Lösungen:
