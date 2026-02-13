@@ -28,12 +28,22 @@ Mein Fokus liegt auf robusten, skalierbaren Lösungen:
 
 ## Projekterfahrung
 
-Auszug aus meiner bisherigen Tätigkeit:
+{% assign featured_projects = site.projects | where: "lang", "de" | where: "featured", true %}
+{% for project in featured_projects %}
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h3 class="archive__item-title" itemprop="headline">
+      <a href="{{ project.url | relative_url }}" rel="permalink">{{ project.title }}</a>
+    </h3>
+    <p class="page__meta">
+      {% if project.role_context %}
+        <i class="fas fa-briefcase" aria-hidden="true"></i> {{ project.role_context }} &nbsp;
+      {% endif %}
+    </p>
+    {% if project.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ project.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+  </article>
+{% endfor %}
 
-*   **Automatisierung & Orchestrierung**: Design und Implementierung einer Automatisierungsarchitektur zwischen CRM-Systemen und Nokia GPON-Netzwerken bei der *Blue Networks GmbH* unter Einsatz von AWX und Ansible.
-*   **Systemadministration**: Verwaltung von Radius-Servern und AWX-Instanzen.
-*   **DevOps**: Administration von GitLab-Instanzen auf Proxmox für Startups.
-*   **Cluster Management**: Langjähriger Betrieb von HA k3s Clustern und produktiven Python-Applikationen.
+[Alle Projekte ansehen](/portfolio/){: .btn .btn--primary}
 
 ## Kontakt
 

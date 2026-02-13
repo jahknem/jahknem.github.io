@@ -26,14 +26,24 @@ My focus is on robust, scalable solutions:
 *   **Infrastructure as Code (IaC)**: Automation with Ansible and AWX.
 *   **SRE & Development**: Development of production-ready Python applications and automation pipelines.
 
-## Experience
+## Featured Projects
 
-Highlights from my professional career:
+{% assign featured_projects = site.projects | where: "lang", "en" | where: "featured", true %}
+{% for project in featured_projects %}
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    <h3 class="archive__item-title" itemprop="headline">
+      <a href="{{ project.url | relative_url }}" rel="permalink">{{ project.title }}</a>
+    </h3>
+    <p class="page__meta">
+      {% if project.role_context %}
+        <i class="fas fa-briefcase" aria-hidden="true"></i> {{ project.role_context }} &nbsp;
+      {% endif %}
+    </p>
+    {% if project.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ project.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+  </article>
+{% endfor %}
 
-*   **Automation & Orchestration**: Design and implementation of automation architecture between CRM systems and Nokia GPON networks at *Blue Networks GmbH* using AWX and Ansible.
-*   **System Administration**: Administration of Radius servers and AWX instances.
-*   **DevOps**: Administration of GitLab instances on Proxmox for startups.
-*   **Cluster Management**: Long-term operation of HA k3s clusters and production Python applications.
+[View all projects](/en/portfolio/){: .btn .btn--primary}
 
 ## Contact
 
