@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Blog of @Jahknem
+title: Jan Kühnemund - SRE & Cloud Consultant
 email: jan@kuehnemund.io
 description: >- # this means to ignore newlines until "baseurl:"
-  This is the blog of Jan Kühnemund. I write about software development, open source, and other topics.
+  Portfolio of Jan Kühnemund. Freelance Kubernetes & Virtualization Consultant. Site Reliability Engineer.
 twitter_username: username
 github_username: jahknem
-minimal_mistakes_skin: default
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
@@ -28,7 +28,7 @@ remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+paginate_path: /blog/page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
@@ -58,14 +58,14 @@ plugins:
 author:
   name   : "Jan Kühnemund"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Software Engineer, Blogger, and Open Source Contributor."
+  bio    : "Freelance Kubernetes & Virtualization Consultant. Site Reliability Engineer."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://www.kuehnemund.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/jahknem"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:jan@kuehnemund.io"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jkuehnemund/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jahknem"
