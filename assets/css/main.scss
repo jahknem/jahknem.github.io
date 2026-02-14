@@ -161,3 +161,23 @@ body {
     }
   }
 }
+
+/* Footer High Contrast Overrides */
+.page__footer {
+  background-color: #161b22 !important; /* Darker footer background */
+  color: #c9d1d9 !important; /* Light text */
+}
+
+.page__footer-follow .social-icons .fas,
+.page__footer-follow .social-icons .fab,
+.page__footer-follow .social-icons .fa {
+  color: #c9d1d9 !important; /* Force icons to be light */
+}
+
+.page__footer-follow .social-icons a {
+    color: #58a6ff !important; /* Links in footer */
+}
+
+.page__footer-copyright {
+    color: #8b949e !important; /* Slightly muted copyright text */
+}
