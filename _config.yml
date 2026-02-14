@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Portfolio of Jan Kühnemund. Site Reliability Engineer, DevOps & Network Automation expert.
 twitter_username: username
 github_username: jahknem
-minimal_mistakes_skin: dark
+# minimal_mistakes_skin: dark # Removed to allow full variable override
 search: true
 
 # Build settings
