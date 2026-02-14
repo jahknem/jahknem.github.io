@@ -3,76 +3,76 @@ layout: single
 title: Curriculum Vitae
 permalink: /en/cv/
 author_profile: true
-sidebar:
-  nav: "main"
 ---
 
-## Summary
+[Download PDF](/assets/cv/jan-kuehnemund-cv.pdf){: .btn .btn--primary .btn--large}
 
-Experienced Site Reliability Engineer and Cloud Consultant focused on Kubernetes, Virtualization, and Automation. Passionate about building robust infrastructure solutions and optimizing operational workflows.
+## Profile
 
-[Download PDF](/assets/cv/jan-kuehnemund-cv.pdf){: .btn .btn--primary}
-
-## Core Skills
-
-*   **Cloud & Containers:** Kubernetes (k3s, HA clusters), Docker
-*   **Virtualization:** Proxmox VE, QEMU/KVM
-*   **Automation (IaC):** Ansible, AWX
-*   **Programming:** Python, Bash
-*   **Networking:** Routing, Switching, VPN (Tailscale)
+Experienced Site Reliability Engineer and Cloud Consultant focusing on Kubernetes, Virtualization, and Automation. Passionate about building robust infrastructure solutions and optimizing operational workflows.
 
 ## Experience
 
-**DFS Deutsche Flugsicherung GmbH** — *Site Reliability Engineer*
-*Dec 2025 – Present* — Langen, Hesse, Germany
+**Site Reliability Engineer**
+*DFS Deutsche Flugsicherung GmbH | Langen (Hesse) | Dec 2025 – present*
+Focus on reliability and system stability in critical air traffic control environments.
 
-**blue networks GmbH & Co. KG** — *DevOps-/Network Engineer*
-*Oct 2021 – Nov 2025* — Lindheim
-*   Clustered automation solutions to streamline network configuration processes.
-*   Designed and implemented automation architectures.
+**DevOps-/Network Engineer**
+*blue networks GmbH & Co. KG | Lindheim | Oct 2021 – Nov 2025*
+*   Development of clustered automation solutions.
+*   Optimization of network configuration processes using Ansible and AWX.
+*   Operation of network services (Radius, AWX).
 
-**RoNikJa GmbH** — *Working Student*
-*Jan 2020 – Nov 2021* — Friedberg (Hessen)
-*   Internal server/network/app ops.
-*   Microcontroller code for digital microscope.
+**Working Student**
+*RoNikJa GmbH | Friedberg (Hesse) | Jan 2020 – Nov 2021*
+*   Internal server/network operations.
+*   Microcontroller firmware development for a digital microscope.
 *   Android app development.
 
-**blue networks GmbH & Co. KG** — *IT Internship*
-*Oct 2020 – Mar 2021*
-*   Designed AAA with FreeRADIUS.
-*   Implemented test environments.
-*   Started ACS solution (CWMP/TR-069).
+**Internship (IT)**
+*blue networks GmbH & Co. KG | Oct 2020 – Mar 2021*
+*   Implementation of an AAA solution using FreeRADIUS.
+*   Started an ACS solution based on CWMP/TR-069.
 
-## Selected Projects
+<details>
+<summary>Show earlier experience</summary>
+<ul>
+<li><strong>Network Technician</strong> @ Equinix (Mar – Sep 2017)</li>
+<li><strong>Apprenticeship IT System Electronics</strong> @ Deutsche Telekom (Sep 2014 – Jan 2017)</li>
+<li><strong>Tutor (Digital Electronics Lab)</strong> & Customer Care roles</li>
+</ul>
+</details>
 
-Check out my projects in my [Portfolio](/portfolio/).
+## Skills
+
+*   **Cloud & Container:** Kubernetes (k3s, HA-Cluster), Docker
+*   **Virtualization:** Proxmox VE, QEMU/KVM
+*   **Automation (IaC):** Ansible, AWX, Terraform
+*   **Programming:** Python, Bash, C/C++
+*   **Network:** Routing, Switching, VPN (Tailscale), Cisco, Nokia
+*   **Observability:** Prometheus, Grafana
 
 ## Education
 
-**TU Darmstadt** — *M.Sc. Computer Science*
-*Apr 2023 – Mar 2026 (expected)*
+**M.Sc. Computer Science**
+*TU Darmstadt | Apr 2023 – Mar 2026 (expected)*
 
-**ISEP** — *M.Sc. Electrical Engineering*
-*Jan 2025 – Jul 2025*
+**Study Abroad**
+*ISEP | Jan – Jul 2025*
 
-**TH Mittelhessen** — *M.Sc. Engineering Informatics*
-*Oct 2022 – Mar 2023*
+**M.Sc. Computer Engineering (started)**
+*TH Mittelhessen | Oct 2022 – Mar 2023*
 
-**TH Mittelhessen** — *B.Eng. Computer Engineering*
-*Sep 2017 – Sep 2022*
+**B.Eng. Computer Engineering**
+*TH Mittelhessen | Sep 2017 – Sep 2022*
 
-## Certifications
+## Certifications & Languages
 
-*   CCNA: Enterprise Networking, Security, and Automation
-*   CCNA: Switching, Routing, and Wireless Essentials
-*   Cambridge English: First (FCE)
-
-## Languages
-
-*   **German:** Native/Bilingual
-*   **English:** Professional working proficiency
-*   **French:** Elementary
-
-## Contact
-
-📧 [jan@kuehnemund.io](mailto:jan@kuehnemund.io)
+*   **Certifications:**
+    *   CCNA: Enterprise Networking, Security, and Automation
+    *   CCNA: Switching, Routing, and Wireless Essentials
+    *   Cambridge English: First (FCE)
+*   **Languages:**
+    *   German (Native)
+    *   English (Professional)
+    *   French (Elementary)

@@ -1,111 +1,77 @@
 ---
-layout: single
+layout: splash
 permalink: /en/
-author_profile: true
-toc: true
-toc_label: "Content"
-toc_icon: "cog"
-title: "Jan Kühnemund"
-excerpt: "Site Reliability Engineer (DFS) | DevOps & Network Automation"
+author_profile: false
+title: "Jan Kühnemund - SRE & DevOps"
 header:
   overlay_color: "#333"
-  actions:
-    - label: "View Portfolio"
-      url: "/en/portfolio/"
-    - label: "View CV"
-      url: "/en/cv/"
 ---
 
-**Site Reliability Engineer (DFS) | DevOps & Network Automation**
-
-Specializing in Reliability Engineering, Automation, and Networking. Focused on scalable infrastructure and efficient operations.
-
-[Portfolio](#projects){: .btn .btn--primary}
-[CV](#experience){: .btn .btn--primary}
-[Contact](#contact){: .btn .btn--primary}
-[LinkedIn](https://www.linkedin.com/in/jkuehnemund/){: .btn .btn--info}
-[GitHub](https://github.com/jahknem){: .btn .btn--info}
-
-## Projects
-
-{% assign featured_projects = site.projects | where: "lang", "en" | where: "featured", true %}
-{% if featured_projects and featured_projects.size > 0 %}
-
-{% for project in featured_projects %}
-<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-  <h3 class="archive__item-title" itemprop="headline">
-    <a href="{{ project.url | relative_url }}" rel="permalink">{{ project.title }}</a>
-  </h3>
-
-  {% if project.role_context %}
-  <p class="page__meta">
-    <i class="fas fa-briefcase" aria-hidden="true"></i> {{ project.role_context }}
-  </p>
-  {% endif %}
-
-  {% if project.excerpt %}
-  <p class="archive__item-excerpt" itemprop="description">
-    {{ project.excerpt | markdownify | strip_html | truncate: 160 }}
-  </p>
-  {% endif %}
-</article>
-{% endfor %}
-
-[View all projects](/en/portfolio/){: .btn .btn--primary}
-
-{% else %}
-
-{% for project in site.data.projects %}
-<div class="feature__item">
-  <div class="archive__item-body">
-    <h3 class="archive__item-title">{{ project.title }}</h3>
-    <p><strong>Role:</strong> {{ project.role }} | <strong>Tech Stack:</strong> {{ project.stack }}</p>
-    <div class="archive__item-excerpt">
-      <p>{{ project.description_en }}</p>
-    </div>
+<div class="hero">
+  <div class="hero__content">
+    <h1>Jan Kühnemund</h1>
+    <p class="lead">Site Reliability Engineer @ DFS | DevOps & Network Automation</p>
+    <p>Specializing in Reliability Engineering, Automation, and complex Network Infrastructures. Focused on scalable solutions and efficient operations through code.</p>
+    <p>
+      <a href="/en/portfolio/" class="btn btn--primary">View Portfolio</a>
+      <a href="/en/cv/" class="btn btn--primary">View CV</a>
+      <a href="/en/contact/" class="btn btn--info">Contact</a>
+    </p>
+  </div>
+  <div class="hero__image">
+    <img src="/assets/images/jan-kuehnemund.jpg" alt="Jan Kühnemund Portrait">
   </div>
 </div>
+
+<div class="pillars-grid">
+  <div class="pillar-card">
+    <h3>Reliability / SRE</h3>
+    <p>Kubernetes, Prometheus, Grafana. Ensuring stability and observability in complex systems.</p>
+  </div>
+  <div class="pillar-card">
+    <h3>Automation / IaC</h3>
+    <p>Ansible, AWX, Python. Automating configurations and processes to reduce errors.</p>
+  </div>
+  <div class="pillar-card">
+    <h3>Networking</h3>
+    <p>Cisco, Nokia, FreeRADIUS. Deep knowledge in network protocols and infrastructure.</p>
+  </div>
+  <div class="pillar-card">
+    <h3>Virtualization</h3>
+    <p>Proxmox, Linux, Containerization. Efficient resource usage and flexible environments.</p>
+  </div>
+</div>
+
+<h2>Selected Experience</h2>
+
+<div class="experience-timeline">
+  <div class="experience-item">
+    <h3>Site Reliability Engineer</h3>
+    <div class="role-meta">DFS Deutsche Flugsicherung GmbH | Dec 2025 – present</div>
+    <p>Focusing on reliability and system stability in critical air traffic control environments.</p>
+  </div>
+  <div class="experience-item">
+    <h3>DevOps-/Network Engineer</h3>
+    <div class="role-meta">blue networks GmbH & Co. KG | Oct 2021 – Nov 2025</div>
+    <p>Development of clustered automation solutions and optimization of network configuration processes.</p>
+  </div>
+</div>
+
+<h2>Selected Projects</h2>
+
+<div class="pillars-grid">
+{% assign featured_projects = site.projects | where: "lang", "en" | where: "featured", true %}
+{% for project in featured_projects %}
+  <div class="project-card">
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <div class="project-meta">{{ project.role_context }}</div>
+    <div class="project-excerpt">
+      {{ project.excerpt | markdownify | strip_html | truncate: 120 }}
+    </div>
+  </div>
 {% endfor %}
+</div>
 
-{% endif %}
-
-## Skills
-
-* **Reliability:** Kubernetes, Prometheus, Grafana
-* **Automation:** Ansible, AWX, Python, CI/CD
-* **Network:** Cisco, Nokia, FreeRADIUS, TR-069
-* **Virtualization:** Proxmox, Linux
-
-## Experience
-
-* **Site Reliability Engineer** @ DFS Deutsche Flugsicherung GmbH  
-  *Langen (Hesse) | Dec 2025 – present*
-* **DevOps-/Network Engineer** @ blue networks GmbH & Co. KG  
-  *Oct 2021 – Nov 2025*  
-  Clustered automation solutions to streamline network configuration processes.
-* **Admin & Android Developer Roles** @ RoNikJa GmbH  
-  *Jan 2020 – Nov 2021*  
-  Internal server/network ops, microcontroller code for a digital microscope, and Android app development.
-* **Internship** @ blue networks  
-  *Oct 2020 – Mar 2021*  
-  AAA solution using FreeRADIUS; started ACS solution based on CWMP/TR-069.
-
-## Education
-
-* **M.Sc Computer Science** @ TU Darmstadt *(Expected Mar 2026)*  
-  *Apr 2023 – present*
-* **Study Abroad** @ ISEP  
-  *Jan – Jul 2025*
-* **B.Eng Computer Engineering**  
-  *Sep 2017 – Sep 2022*
-
-## Certifications & Languages
-
-* **Certifications:** CCNA (ENSA), CCNA (SRWE), Cambridge English: First (FCE)
-* **Languages:** German (Native), English (Professional), French (Elementary)
-
-## Contact {#contact}
-
-I am available for projects. Let's discuss how I can optimize your infrastructure.
-
-📧 [jan@kuehnemund.io](mailto:jan@kuehnemund.io)
+<p style="text-align: center;">
+  <a href="/en/portfolio/" class="btn btn--outline-primary">View all projects</a>
+</p>
