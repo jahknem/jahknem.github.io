@@ -62,7 +62,7 @@ plugins:
 
 author:
   name   : "Jan Kühnemund"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/jan-kuehnemund.jpg"
   bio    : "Site Reliability Engineer (DFS). Former DevOps & Network Engineer (Blue Networks)."
   links:
     - label: "Email"

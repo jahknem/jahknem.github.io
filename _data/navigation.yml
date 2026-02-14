@@ -5,9 +5,9 @@ main:
     url: /portfolio/
   - title: "CV"
     url: /cv/
-  - title: "Articles"
+  - title: "Blog"
     url: /blog/
-  - title: "CV"
-    url: /cv/
-  - title: "English"
+  - title: "Kontakt"
+    url: /contact/
+  - title: "EN"
     url: /en/
