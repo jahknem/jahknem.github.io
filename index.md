@@ -9,6 +9,11 @@ title: "Jan Kühnemund - SRE & Cloud Consultant"
 excerpt: "Freiberuflicher Consultant für Kubernetes, Virtualisierung und Cloud-Infrastruktur."
 header:
   overlay_color: "#333"
+  actions:
+    - label: "Portfolio ansehen"
+      url: "/portfolio/"
+    - label: "Lebenslauf (CV)"
+      url: "/cv/"
 ---
 
 Ich bin **Jan Kühnemund**, spezialisiert auf **Site Reliability Engineering (SRE)**, **Kubernetes** und **Virtualisierung**. Mit fundiertem Hintergrund in Computer Engineering und jahrelanger praktischer Erfahrung unterstütze ich Projekte bei der Skalierung und Automatisierung ihrer Infrastruktur.

@@ -9,6 +9,11 @@ title: "Jan Kühnemund - SRE & Cloud Consultant"
 excerpt: "Freelance Consultant for Kubernetes, Virtualization, and Cloud Infrastructure."
 header:
   overlay_color: "#333"
+  actions:
+    - label: "View Portfolio"
+      url: "/en/portfolio/"
+    - label: "View CV"
+      url: "/en/cv/"
 ---
 
 I am **Jan Kühnemund**, a freelance consultant specializing in **Site Reliability Engineering (SRE)**, **Kubernetes**, and **Virtualization**. With a strong background in Computer Engineering and years of hands-on experience, I help businesses scale and automate their infrastructure.

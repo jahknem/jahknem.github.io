@@ -1,7 +1,11 @@
 main:
-  - title: "Startseite"
+  - title: "Home"
     url: /
-  - title: "Blog"
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "CV"
+    url: /cv/
+  - title: "Articles"
     url: /blog/
   - title: "English"
     url: /en/
