@@ -121,3 +121,8 @@ tag_archive:
 
 sitemap:
   exclude: ["hidden-websocket-terminal"]
+
+# RDM53 Terminal Access
+# Set rdm53_password_hash to the SHA-256 hash of your desired access code.
+# The default hash below corresponds to 'rdm53-access' (for demonstration purposes).
+rdm53_password_hash: "98e34fc48bb85e794e140498efd2582d612b2c77ad21eba2612d6b139b33b9d6"
