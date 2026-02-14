@@ -52,6 +52,13 @@ body {
   }
 }
 
+/* Active Navigation State */
+.masthead__menu-item a.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: bold;
+}
+
 /* Pillars Grid */
 .pillars-grid {
   display: grid;

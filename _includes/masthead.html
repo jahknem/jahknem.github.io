@@ -18,10 +18,25 @@
           {% endif %}
           {%- for link in nav -%}
             <li class="masthead__menu-item">
+              {% assign active_class = "" %}
+              {% assign aria_current = "" %}
+              {% assign link_path = link.url %}
+              {% assign page_path = page.url %}
+
+              {% if link_path == page_path %}
+                {% assign active_class = "active" %}
+                {% assign aria_current = 'aria-current="page"' %}
+              {% elsif link_path != "/" and link_path != "/en/" and page_path contains link_path %}
+                {% assign active_class = "active" %}
+                {% assign aria_current = 'aria-current="page"' %}
+              {% endif %}
+
               <a
                 href="{{ link.url | relative_url }}"
                 {% if link.description %} title="{{ link.description }}"{% endif %}
                 {% if link.target %} target="{{ link.target }}"{% endif %}
+                class="{{ active_class }}"
+                {{ aria_current }}
               >{{ link.title }}</a>
             </li>
           {%- endfor -%}
