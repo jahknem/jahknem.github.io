@@ -23,6 +23,13 @@ layout: splash
   {% for pillar in content.pillars %}
   <div class="pillar-card">
     <h3>{{ pillar.title }}</h3>
+    {% if pillar.keywords %}
+    <p class="pillar-keywords">
+      {% for keyword in pillar.keywords %}
+        <span class="keyword-tag">{{ keyword }}</span>
+      {% endfor %}
+    </p>
+    {% endif %}
     <p>{{ pillar.text }}</p>
   </div>
   {% endfor %}

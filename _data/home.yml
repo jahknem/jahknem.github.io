@@ -13,18 +13,22 @@ de:
     contact_url: "/contact/"
   pillars:
     - title: "Reliability / SRE"
-      text: "Kubernetes, Prometheus, Grafana. Sicherstellung von Stabilität und Observability in komplexen Systemen."
+      keywords: ["Kubernetes", "Prometheus", "Grafana"]
+      text: "Sicherstellung von Stabilität und Observability in komplexen Systemen."
     - title: "Automation / IaC"
-      text: "Ansible, AWX, Python. Automatisierung von Konfigurationen und Prozessen zur Fehlerreduktion."
+      keywords: ["Ansible", "AWX", "Python"]
+      text: "Automatisierung von Konfigurationen und Prozessen zur Fehlerreduktion."
     - title: "Networking"
-      text: "Cisco, Nokia, FreeRADIUS. Fundiertes Wissen in Netzwerkprotokollen und -infrastruktur."
+      keywords: ["Cisco", "Nokia", "FreeRADIUS"]
+      text: "Fundiertes Wissen in Netzwerkprotokollen und -infrastruktur."
     - title: "Virtualization"
-      text: "Proxmox, Linux, Containerisierung. Effiziente Ressourcennutzung und flexible Umgebungen."
+      keywords: ["Proxmox", "Linux", "Containerisierung"]
+      text: "Effiziente Ressourcennutzung und flexible Umgebungen."
   experience_title: "Ausgewählte Erfahrung"
   experience:
     - role: "Site Reliability Engineer"
       meta: "DFS Deutsche Flugsicherung GmbH | Dez 2025 – heute"
-      text: "Fokus auf Reliability und Systemstabilität im kritischen Umfeld der Flugsicherung."
+      text: "Fokus auf Reliability und Systemstabilität im Cloud-Umfeld der DFS."
     - role: "DevOps-/Network Engineer"
       meta: "blue networks GmbH & Co. KG | Okt 2021 – Nov 2025"
       text: "Entwicklung von Cluster-Automatisierungslösungen und Optimierung von Netzwerkkonfigurationsprozessen."
@@ -47,18 +51,22 @@ en:
     contact_url: "/en/contact/"
   pillars:
     - title: "Reliability / SRE"
-      text: "Kubernetes, Prometheus, Grafana. Ensuring stability and observability in complex systems."
+      keywords: ["Kubernetes", "Prometheus", "Grafana"]
+      text: "Ensuring stability and observability in complex systems."
     - title: "Automation / IaC"
-      text: "Ansible, AWX, Python. Automating configurations and processes to reduce errors."
+      keywords: ["Ansible", "AWX", "Python"]
+      text: "Automating configurations and processes to reduce errors."
     - title: "Networking"
-      text: "Cisco, Nokia, FreeRADIUS. Deep knowledge in network protocols and infrastructure."
+      keywords: ["Cisco", "Nokia", "FreeRADIUS"]
+      text: "Deep knowledge in network protocols and infrastructure."
     - title: "Virtualization"
-      text: "Proxmox, Linux, Containerization. Efficient resource usage and flexible environments."
+      keywords: ["Proxmox", "Linux", "Containerization"]
+      text: "Efficient resource usage and flexible environments."
   experience_title: "Selected Experience"
   experience:
     - role: "Site Reliability Engineer"
       meta: "DFS Deutsche Flugsicherung GmbH | Dec 2025 – present"
-      text: "Focusing on reliability and system stability in critical air traffic control environments."
+      text: "Focusing on reliability and system stability in the DFS cloud environment."
     - role: "DevOps-/Network Engineer"
       meta: "blue networks GmbH & Co. KG | Oct 2021 – Nov 2025"
       text: "Development of clustered automation solutions and optimization of network configuration processes."

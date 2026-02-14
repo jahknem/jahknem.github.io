@@ -7,7 +7,7 @@ de:
   experience:
     - role: "Site Reliability Engineer"
       meta: "DFS Deutsche Flugsicherung GmbH | Langen (Hessen) | Dez 2025 – heute"
-      description: "Fokus auf Reliability und Systemstabilität im kritischen Umfeld der Flugsicherung."
+      description: "Fokus auf Reliability und Systemstabilität im Cloud-Umfeld der DFS."
     - role: "DevOps-/Network Engineer"
       meta: "blue networks GmbH & Co. KG | Lindheim | Okt 2021 – Nov 2025"
       description:
@@ -75,7 +75,7 @@ en:
   experience:
     - role: "Site Reliability Engineer"
       meta: "DFS Deutsche Flugsicherung GmbH | Langen (Hesse) | Dec 2025 – present"
-      description: "Focus on reliability and system stability in critical air traffic control environments."
+      description: "Focus on reliability and system stability in the DFS cloud environment."
     - role: "DevOps-/Network Engineer"
       meta: "blue networks GmbH & Co. KG | Lindheim | Oct 2021 – Nov 2025"
       description:
