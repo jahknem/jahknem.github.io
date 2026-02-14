@@ -3,13 +3,32 @@
 ---
 
 /* Custom Variables - High Contrast Dark Theme */
+/* Overriding standard Minimal Mistakes variables */
 $background-color: #0d1117;
 $text-color: #c9d1d9;
 $muted-text-color: #8b949e;
 $primary-color: #58a6ff;
 $link-color: #58a6ff;
-$masthead-link-color: #f0f6fc;
+
+/* Navigation */
+$masthead-link-color: #c9d1d9;
+$masthead-link-color-hover: #58a6ff;
+$navicon-link-color-hover: #58a6ff;
+
+/* Footer */
 $footer-background-color: #161b22;
+$footer-text-color: #8b949e;
+
+/* UI Elements */
+$border-color: #30363d;
+$code-background-color: #161b22;
+$form-background-color: #0d1117;
+$table-text-color: #c9d1d9;
+$table-stripe-color: #161b22;
+$table-background-color: #0d1117;
+$search-background-color: #0d1117;
+
+/* Custom Vars used in overrides below */
 $card-background: #161b22;
 $card-border: #30363d;
 
@@ -21,6 +40,13 @@ body {
   line-height: 1.6;
   background-color: $background-color;
   color: $text-color;
+}
+
+/* Ensure inputs match the theme */
+input, textarea, select {
+  background-color: $form-background-color;
+  color: $text-color;
+  border-color: $border-color;
 }
 
 /* Wider layout for key pages */
@@ -169,22 +195,22 @@ body {
   }
 }
 
-/* Footer High Contrast Overrides */
+/* Footer High Contrast Overrides - Explicitly referencing vars */
 .page__footer {
-  background-color: #161b22 !important; /* Darker footer background */
-  color: #c9d1d9 !important; /* Light text */
+  background-color: $footer-background-color !important;
+  color: $text-color !important;
 }
 
 .page__footer-follow .social-icons .fas,
 .page__footer-follow .social-icons .fab,
 .page__footer-follow .social-icons .fa {
-  color: #c9d1d9 !important; /* Force icons to be light */
+  color: $text-color !important;
 }
 
 .page__footer-follow .social-icons a {
-    color: #58a6ff !important; /* Links in footer */
+    color: $primary-color !important;
 }
 
 .page__footer-copyright {
-    color: #8b949e !important; /* Slightly muted copyright text */
+    color: $muted-text-color !important;
 }
