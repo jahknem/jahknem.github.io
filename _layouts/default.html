@@ -26,8 +26,8 @@
 
     <div id="footer" class="page__footer">
       <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
+        {% include_cached footer/custom.html %}
+        {% include_cached footer.html lang=page.lang %}
       </footer>
     </div>
 
