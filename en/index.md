@@ -5,40 +5,73 @@ author_profile: true
 toc: true
 toc_label: "Content"
 toc_icon: "cog"
-title: "Jan Kühnemund - SRE & Cloud Consultant"
-excerpt: "Freelance Consultant for Kubernetes, Virtualization, and Cloud Infrastructure."
+title: "Jan Kühnemund"
+excerpt: "Site Reliability Engineer (DFS) | DevOps & Network Automation"
 header:
   overlay_color: "#333"
 ---
 
-I am **Jan Kühnemund**, a freelance consultant specializing in **Site Reliability Engineering (SRE)**, **Kubernetes**, and **Virtualization**. With a strong background in Computer Engineering and years of hands-on experience, I help businesses scale and automate their infrastructure.
+**Site Reliability Engineer (DFS) | DevOps & Network Automation**
 
-## About Me
+Specializing in Reliability Engineering, Automation, and Networking. Focused on scalable infrastructure and efficient operations.
 
-Born in 1995, I combine academic knowledge with practical technical expertise. My journey started with an apprenticeship as an **IT Systems Electronics Technician** and led to a **Bachelor of Engineering in Computer Engineering**. This combination gives me a deep understanding from hardware to high-level software architecture.
+[Portfolio](#projects){: .btn .btn--primary}
+[CV](#experience){: .btn .btn--primary}
+[Contact](#contact){: .btn .btn--primary}
+[LinkedIn](https://www.linkedin.com/in/jkuehnemund/){: .btn .btn--info}
+[GitHub](https://github.com/jahknem){: .btn .btn--info}
 
-[View CV](/en/cv/){: .btn .btn--primary}
+## Projects
 
-## Services
+{% for project in site.data.projects %}
+<div class="feature__item">
+  <div class="archive__item-body">
+    <h3 class="archive__item-title">{{ project.title }}</h3>
+    <p><strong>Role:</strong> {{ project.role }} | <strong>Tech Stack:</strong> {{ project.stack }}</p>
+    <div class="archive__item-excerpt">
+      <p>{{ project.description_en }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
 
-My focus is on robust, scalable solutions:
+## Skills
 
-*   **Kubernetes & Containers**: Concept and operation of High Availability Clusters (e.g., k3s).
-*   **Virtualization**: Expert knowledge in Proxmox VE (10+ years experience) and virtualization technologies.
-*   **Infrastructure as Code (IaC)**: Automation with Ansible and AWX.
-*   **SRE & Development**: Development of production-ready Python applications and automation pipelines.
+*   **Reliability:** Kubernetes, Prometheus, Grafana
+*   **Automation:** Ansible, AWX, Python, CI/CD
+*   **Network:** Cisco, Nokia, FreeRADIUS, TR-069
+*   **Virtualization:** Proxmox, Linux
 
 ## Experience
 
-Highlights from my professional career:
+*   **Site Reliability Engineer** @ DFS Deutsche Flugsicherung GmbH
+    *Langen (Hesse) | Dec 2025 – present*
+*   **DevOps-/Network Engineer** @ blue networks GmbH & Co. KG
+    *Oct 2021 – Nov 2025*
+    Clustered automation solutions to streamline network configuration processes.
+*   **Working Student** @ RoNikJa GmbH
+    *Jan 2020 – Nov 2021*
+    Internal server/network ops, microcontroller code for a digital microscope, and Android app development.
+*   **Internship** @ blue networks
+    *Oct 2020 – Mar 2021*
+    AAA solution using FreeRADIUS; started ACS solution based on CWMP/TR-069.
 
-*   **Automation & Orchestration**: Design and implementation of automation architecture between CRM systems and Nokia GPON networks at *Blue Networks GmbH* using AWX and Ansible.
-*   **System Administration**: Administration of Radius servers and AWX instances.
-*   **DevOps**: Administration of GitLab instances on Proxmox for startups.
-*   **Cluster Management**: Long-term operation of HA k3s clusters and production Python applications.
+## Education
+
+*   **M.Sc Computer Science** @ TU Darmstadt *(Expected Mar 2026)*
+    *Apr 2023 – present*
+*   **Study Abroad** @ ISEP
+    *Jan – Jul 2025*
+*   **B.Eng Computer Engineering**
+    *Sep 2017 – Sep 2022*
+
+## Certifications & Languages
+
+*   **Certifications:** CCNA (ENSA), CCNA (SRWE), Cambridge English: First (FCE)
+*   **Languages:** German (Native), English (Professional), French (Elementary)
 
 ## Contact
 
-I am available for freelance projects. Let's discuss how I can optimize your infrastructure.
+I am available for projects. Let's discuss how I can optimize your infrastructure.
 
-📧 [jan@kuehnemund.io](mailto:jan@kuehnemund.io)
+📧 [jan.kuehnemund@outlook.com](mailto:jan.kuehnemund@outlook.com)
