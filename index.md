@@ -78,7 +78,7 @@ Spezialisiert auf Reliability Engineering, Automatisierung und komplexe Netzwerk
 * **DevOps-/Network Engineer** @ blue networks GmbH & Co. KG  
   *Okt 2021 – Nov 2025*  
   Cluster-Automatisierungslösungen zur Optimierung von Netzwerkkonfigurationsprozessen.
-* **Werkstudent** @ RoNikJa GmbH  
+* **Admin & Android Developer Roles** @ RoNikJa GmbH  
   *Jan 2020 – Nov 2021*  
   Interner Server-/Netzwerkbetrieb, Mikrocontroller-Code für ein digitales Mikroskop sowie Android-App-Entwicklung.
 * **Praktikum** @ blue networks  

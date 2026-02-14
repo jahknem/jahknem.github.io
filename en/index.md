@@ -78,7 +78,7 @@ Specializing in Reliability Engineering, Automation, and Networking. Focused on 
 * **DevOps-/Network Engineer** @ blue networks GmbH & Co. KG  
   *Oct 2021 – Nov 2025*  
   Clustered automation solutions to streamline network configuration processes.
-* **Working Student** @ RoNikJa GmbH  
+* **Admin & Android Developer Roles** @ RoNikJa GmbH  
   *Jan 2020 – Nov 2021*  
   Internal server/network ops, microcontroller code for a digital microscope, and Android app development.
 * **Internship** @ blue networks  
