@@ -1,0 +1,74 @@
+---
+layout: single
+---
+{% assign content = site.data.cv[page.lang] %}
+
+<p>
+  <a href="{{ content.download_url }}" class="btn btn--primary btn--large">{{ content.download_button }}</a>
+</p>
+
+<h2>{{ content.profile_title }}</h2>
+<p>{{ content.profile_text }}</p>
+
+<h2>{{ content.experience_title }}</h2>
+<div class="experience-timeline">
+{% for item in content.experience %}
+  <div class="experience-item">
+    <h3>{{ item.role }}</h3>
+    <div class="role-meta">{{ item.meta }}</div>
+    {% if item.description.first %}
+    <ul>
+      {% for desc in item.description %}
+      <li>{{ desc }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>{{ item.description }}</p>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
+
+{% if content.earlier_experience %}
+<details>
+<summary>{{ content.earlier_experience_title }}</summary>
+<ul>
+{% for item in content.earlier_experience %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>
+</details>
+{% endif %}
+
+<h2>{{ content.skills_title }}</h2>
+<ul>
+{% for item in content.skills %}
+  <li><strong>{{ item.category }}:</strong> {{ item.items }}</li>
+{% endfor %}
+</ul>
+
+<h2>{{ content.education_title }}</h2>
+{% for item in content.education %}
+<p>
+  <strong>{{ item.degree }}</strong><br>
+  <em>{{ item.meta }}</em>
+</p>
+{% endfor %}
+
+<h2>{{ content.certifications_title }}</h2>
+<ul>
+  <li><strong>{{ content.certifications_list_title }}:</strong>
+    <ul>
+    {% for cert in content.certifications %}
+      <li>{{ cert }}</li>
+    {% endfor %}
+    </ul>
+  </li>
+  <li><strong>{{ content.languages_list_title }}:</strong>
+    <ul>
+    {% for lang in content.languages %}
+      <li>{{ lang }}</li>
+    {% endfor %}
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,11 @@
+de:
+  intro: "Ich freue mich auf den Austausch."
+  email_label: "Email"
+  linkedin_label: "LinkedIn"
+  github_label: "GitHub"
+
+en:
+  intro: "I am available for projects. Let's discuss how I can optimize your infrastructure."
+  email_label: "Email"
+  linkedin_label: "LinkedIn"
+  github_label: "GitHub"
