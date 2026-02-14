@@ -120,6 +120,22 @@ input, textarea, select {
   }
 }
 
+.pillar-keywords {
+  margin-bottom: 0.5rem;
+}
+
+.keyword-tag {
+  display: inline-block;
+  background-color: lighten($card-background, 5%);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+  color: $primary-color;
+  border: 1px solid $border-color;
+}
+
 /* Project Cards */
 .project-card {
   display: flex;
