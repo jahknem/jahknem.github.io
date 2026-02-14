@@ -1,4 +1,4 @@
-main:
+main_de:
   - title: "Home"
     url: /
   - title: "Portfolio"
@@ -11,3 +11,17 @@ main:
     url: /contact/
   - title: "EN"
     url: /en/
+
+main_en:
+  - title: "Home"
+    url: /en/
+  - title: "Portfolio"
+    url: /en/portfolio/
+  - title: "CV"
+    url: /en/cv/
+  - title: "Blog"
+    url: /blog/
+  - title: "Contact"
+    url: /en/contact/
+  - title: "DE"
+    url: /

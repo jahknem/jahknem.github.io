@@ -1,0 +1,12 @@
+---
+layout: single
+---
+{% assign content = site.data.contact[page.lang] %}
+
+<p>{{ content.intro }}</p>
+
+<ul>
+  <li><strong>{{ content.email_label }}:</strong> <a href="mailto:jan@kuehnemund.io">jan@kuehnemund.io</a></li>
+  <li><strong>{{ content.linkedin_label }}:</strong> <a href="https://www.linkedin.com/in/jkuehnemund/">https://www.linkedin.com/in/jkuehnemund/</a></li>
+  <li><strong>{{ content.github_label }}:</strong> <a href="https://github.com/jahknem">https://github.com/jahknem</a></li>
+</ul>

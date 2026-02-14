@@ -1,0 +1,12 @@
+de:
+  follow_label: "Folgen"
+  feed_label: "Feed"
+  powered_by: "Erstellt mit"
+  search_label: "Suche umschalten"
+  menu_label: "Menü umschalten"
+en:
+  follow_label: "Follow"
+  feed_label: "Feed"
+  powered_by: "Powered by"
+  search_label: "Toggle search"
+  menu_label: "Toggle menu"

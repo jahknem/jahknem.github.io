@@ -1,0 +1,60 @@
+---
+layout: splash
+---
+{% assign content = site.data.home[page.lang] %}
+
+<div class="hero">
+  <div class="hero__content">
+    <h1>{{ content.hero_title }}</h1>
+    <p class="lead">{{ content.hero_lead }}</p>
+    <p>{{ content.hero_description }}</p>
+    <p>
+      <a href="{{ content.buttons.portfolio_url }}" class="btn btn--primary">{{ content.buttons.portfolio }}</a>
+      <a href="{{ content.buttons.cv_url }}" class="btn btn--primary">{{ content.buttons.cv }}</a>
+      <a href="{{ content.buttons.contact_url }}" class="btn btn--info">{{ content.buttons.contact }}</a>
+    </p>
+  </div>
+  <div class="hero__image">
+    <img src="{{ content.hero_image }}" alt="{{ content.hero_image_alt }}">
+  </div>
+</div>
+
+<div class="pillars-grid">
+  {% for pillar in content.pillars %}
+  <div class="pillar-card">
+    <h3>{{ pillar.title }}</h3>
+    <p>{{ pillar.text }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>{{ content.experience_title }}</h2>
+
+<div class="experience-timeline">
+  {% for item in content.experience %}
+  <div class="experience-item">
+    <h3>{{ item.role }}</h3>
+    <div class="role-meta">{{ item.meta }}</div>
+    <p>{{ item.text }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>{{ content.projects_title }}</h2>
+
+<div class="pillars-grid">
+{% assign featured_projects = site.projects | where: "lang", page.lang | where: "featured", true %}
+{% for project in featured_projects %}
+  <div class="project-card">
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <div class="project-meta">{{ project.role_context }}</div>
+    <div class="project-excerpt">
+      {{ project.excerpt | markdownify | strip_html | truncate: 120 }}
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<p style="text-align: center;">
+  <a href="{{ content.all_projects_url }}" class="btn btn--outline-primary">{{ content.all_projects_button }}</a>
+</p>
