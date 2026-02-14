@@ -5,17 +5,19 @@ author_profile: true
 toc: true
 toc_label: "Content"
 toc_icon: "cog"
-title: "Jan Kühnemund - SRE & Cloud Consultant"
-excerpt: "Freelance Consultant for Kubernetes, Virtualization, and Cloud Infrastructure."
+title: "Portfolio"
+excerpt: "Portfolio of Jan Kühnemund. Site Reliability Engineer, DevOps & Network Automation."
 header:
   overlay_color: "#333"
 ---
 
-I am **Jan Kühnemund**, a freelance consultant specializing in **Site Reliability Engineering (SRE)**, **Kubernetes**, and **Virtualization**. With a strong background in Computer Engineering and years of hands-on experience, I help businesses scale and automate their infrastructure.
+I am **Jan Kühnemund**, a **Site Reliability Engineer (SRE)** specializing in **Network Automation** and **DevOps**. I build scalable infrastructures and automate complex network processes.
 
 ## About Me
 
-Born in 1995, I combine academic knowledge with practical technical expertise. My journey started with an apprenticeship as an **IT Systems Electronics Technician** and led to a **Bachelor of Engineering in Computer Engineering**. This combination gives me a deep understanding from hardware to high-level software architecture.
+Currently, I work as a **Site Reliability Engineer** at **DFS Deutsche Flugsicherung**, ensuring the stability and availability of critical systems. Previously, I was a **DevOps & Network Engineer** at **Blue Networks GmbH**, where I implemented automation solutions for ISP networks.
+
+My expertise is built on years of hands-on experience, complemented by my degree in **Computer Engineering (B.Eng.)** and an apprenticeship as an **IT Systems Electronics Technician**.
 
 ## Services
 

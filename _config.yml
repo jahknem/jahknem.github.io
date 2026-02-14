@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Jan Kühnemund - SRE & Cloud Consultant
+title: Jan Kühnemund - Site Reliability Engineer | DevOps | Network Automation
 email: jan@kuehnemund.io
 description: >- # this means to ignore newlines until "baseurl:"
-  Portfolio of Jan Kühnemund. Freelance Kubernetes & Virtualization Consultant. Site Reliability Engineer.
+  Portfolio of Jan Kühnemund. Site Reliability Engineer, DevOps & Network Automation expert.
 twitter_username: username
 github_username: jahknem
 minimal_mistakes_skin: dark
@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Jan Kühnemund"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Freelance Kubernetes & Virtualization Consultant. Site Reliability Engineer."
+  bio    : "Site Reliability Engineer (DFS). Former DevOps & Network Engineer (Blue Networks)."
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
