@@ -9,6 +9,11 @@ title: "Jan Kühnemund"
 excerpt: "Site Reliability Engineer (DFS) | DevOps & Network Automation"
 header:
   overlay_color: "#333"
+  actions:
+    - label: "Portfolio ansehen"
+      url: "/portfolio/"
+    - label: "Lebenslauf (CV)"
+      url: "/cv/"
 ---
 
 **Site Reliability Engineer (DFS) | DevOps & Network Automation**
