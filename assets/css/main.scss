@@ -2,12 +2,25 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+/* Custom Variables - High Contrast Dark Theme */
+$background-color: #0d1117;
+$text-color: #c9d1d9;
+$muted-text-color: #8b949e;
+$primary-color: #58a6ff;
+$link-color: #58a6ff;
+$masthead-link-color: #f0f6fc;
+$footer-background-color: #161b22;
+$card-background: #161b22;
+$card-border: #30363d;
+
 @import "minimal-mistakes";
 
 /* Custom overrides */
 
 body {
   line-height: 1.6;
+  background-color: $background-color;
+  color: $text-color;
 }
 
 /* Wider layout for key pages */
@@ -68,15 +81,16 @@ body {
 }
 
 .pillar-card {
-  /* Attempt to use theme variable, fallback to dark grey */
-  background: #252a34;
+  background: $card-background;
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid #3b4252;
+  border: 1px solid $card-border;
+  color: $text-color;
 
   h3 {
     margin-top: 0;
     font-size: 1.25rem;
+    color: $primary-color;
   }
 }
 
@@ -85,21 +99,23 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #252a34;
+  background: $card-background;
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid #3b4252;
+  border: 1px solid $card-border;
   transition: transform 0.2s ease;
+  color: $text-color;
 
   &:hover {
     transform: translateY(-4px);
+    border-color: $primary-color;
   }
 
   h3 {
     margin-top: 0;
     a {
       text-decoration: none;
-      color: inherit;
+      color: $primary-color;
       &:hover {
         text-decoration: underline;
       }
@@ -108,7 +124,7 @@ body {
 
   .project-meta {
     font-size: 0.9em;
-    color: #aeb0b5;
+    color: $muted-text-color;
     margin-bottom: 1rem;
   }
 
@@ -119,7 +135,7 @@ body {
 
 /* Experience Timeline (Simplified) */
 .experience-timeline {
-  border-left: 2px solid #52adc8; /* Default primary color */
+  border-left: 2px solid $primary-color;
   padding-left: 1.5rem;
   margin-left: 0.5rem;
 
@@ -134,20 +150,41 @@ body {
       top: 0.25rem;
       width: 1rem;
       height: 1rem;
-      background: #52adc8;
+      background: $primary-color;
       border-radius: 50%;
     }
 
     h3 {
       margin-top: 0;
       margin-bottom: 0.25rem;
+      color: $text-color;
     }
 
     .role-meta {
       font-size: 0.9rem;
-      color: #aeb0b5;
+      color: $muted-text-color;
       margin-bottom: 0.5rem;
       font-style: italic;
     }
   }
+}
+
+/* Footer High Contrast Overrides */
+.page__footer {
+  background-color: #161b22 !important; /* Darker footer background */
+  color: #c9d1d9 !important; /* Light text */
+}
+
+.page__footer-follow .social-icons .fas,
+.page__footer-follow .social-icons .fab,
+.page__footer-follow .social-icons .fa {
+  color: #c9d1d9 !important; /* Force icons to be light */
+}
+
+.page__footer-follow .social-icons a {
+    color: #58a6ff !important; /* Links in footer */
+}
+
+.page__footer-copyright {
+    color: #8b949e !important; /* Slightly muted copyright text */
 }
