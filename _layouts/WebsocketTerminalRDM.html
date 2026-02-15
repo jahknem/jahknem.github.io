@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Websocket Terminal for RDM53</title>
@@ -14,11 +14,13 @@
 <body>
 
 <div id="LoginContainer" style="display: none; padding: 2em; border: 2px solid black; border-radius: 5px; width: 300px; margin: 100px auto; text-align: center; box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);">
-	<h2>RDM53 Access</h2>
-	<p>Authentication required</p>
-	<input type="password" id="accessCode" placeholder="Enter Access Code" style="width: 80%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-	<button type="button" onclick="checkAccess()">Login</button>
-	<p id="loginError" style="color: red; display: none; margin-top: 10px;">Invalid access code.</p>
+	<form onsubmit="event.preventDefault(); checkAccess();">
+		<h2>RDM53 Access</h2>
+		<p>Authentication required</p>
+		<input type="password" id="accessCode" aria-label="Access Code" placeholder="Enter Access Code" style="width: 80%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+		<button type="submit">Login</button>
+		<p id="loginError" aria-live="polite" style="color: red; display: none; margin-top: 10px;">Invalid access code.</p>
+	</form>
 </div>
 
 <div id="PageContent" style="display: none;">
@@ -26,7 +28,7 @@
 	<h1><a href='/rdm53.html' target="_self" >Websocket Terminal for RDM53</a> <button type="button" onclick="logout()" style="float: right; font-size: 0.5em;">Logout</button></h1><br>
 	<div>
 	last update: 16 12 2019 <br> <br> <br>
-	Change IP Address: 	<input id="IPInputString" type="url" style="width:30em" placeholder="ws://xxx.xxx.xxx.xxx:xx"/>
+	<label for="IPInputString">Change IP Address:</label> 	<input id="IPInputString" type="url" style="width:30em" placeholder="ws://xxx.xxx.xxx.xxx:xx"/>
 	<button type="button" id="buttonChangeIP" onclick="refreshIPAdress(id);" value="IPInputString">Change IP</button></br>
 	Server IP Adress: 	<span id="WebSocketIPScreen"></span>
 						<button type="button" id="IPSocket" onclick="EndWebsocketClient();" value="IPInput1">Disconnect</button><br>
@@ -37,9 +39,9 @@
 	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 	<button class="collapsible"><h2>Raw Data</h2></button>
 	<div class="content">
-	String Command: 			<input id="TerminalInputStr" type="text" style="width:40em" placeholder="Enter String commands!" />
+	String Command: 			<input id="TerminalInputStr" aria-label="String Command Input" type="text" style="width:40em" placeholder="Enter String commands!" />
 						<button type="button" id="websocketStrCmdSend" onclick="sendCommandOnClick(value);" value="TerminalInputStr">Send</button></br>
-	Hex Command:		<input id="TerminalInputHex" type="text" style="width:40em" placeholder="Enter Hex commands!" />
+	Hex Command:		<input id="TerminalInputHex" aria-label="Hex Command Input" type="text" style="width:40em" placeholder="Enter Hex commands!" />
 						<button type="button" id="websocketHexCmdSend" onclick="WebHexCmdSend(value);" value="TerminalInputHex">Send</button></br>
 	Sent strings: </br>
 	<textarea name="text" id="commandStore" style="width:40%" rows="10" readonly placeholder="Sent data appears here..." ></textarea>
@@ -79,7 +81,7 @@
 		</tr>
 		</table>
 	</br>
-		<input id="CalibrationInput" type="text" style="width:40em" placeholder="Float"/>
+		<input id="CalibrationInput" aria-label="Calibration Value" type="text" style="width:40em" placeholder="Float"/>
 		<button type="button" id="buttonSendXOffset" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send x Offset</button>
 		<button type="button" id="buttonSendYOffset" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send y Offset</button>
 		<button type="button" id="buttonSendZOffset" onclick="WebFloatToHexCmdSend(id);" value="11030100000000000012">Send z Offset</button>
