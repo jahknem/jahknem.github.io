@@ -1,0 +1,4 @@
+127.0.0.1 - - [18/Feb/2026 18:10:01] "GET /rdm53/ HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 18:10:01] code 404, message File not found
+127.0.0.1 - - [18/Feb/2026 18:10:01] "GET /assets/js/RDM53TerminalScripts.js HTTP/1.1" 404 -
+127.0.0.1 - - [18/Feb/2026 18:10:01] "GET /assets/css/RDM53Style.css HTTP/1.1" 200 -
