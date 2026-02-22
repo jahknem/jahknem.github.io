@@ -6,7 +6,9 @@ layout: single
 <p>{{ content.intro }}</p>
 
 <ul>
-  <li><strong>{{ content.email_label }}:</strong> <a href="mailto:jan@kuehnemund.io">jan@kuehnemund.io</a></li>
-  <li><strong>{{ content.linkedin_label }}:</strong> <a href="https://www.linkedin.com/in/jkuehnemund/">https://www.linkedin.com/in/jkuehnemund/</a></li>
-  <li><strong>{{ content.github_label }}:</strong> <a href="https://github.com/jahknem">https://github.com/jahknem</a></li>
+  {% for link in site.author.links %}
+    {% assign label_key = link.label | downcase | append: "_label" %}
+    {% assign localized_label = content[label_key] | default: link.label %}
+    <li><strong>{{ localized_label }}:</strong> <a href="{{ link.url }}">{{ link.url | remove: 'mailto:' }}</a></li>
+  {% endfor %}
 </ul>
