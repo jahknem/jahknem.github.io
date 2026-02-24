@@ -16,8 +16,10 @@
 <div id="LoginContainer" style="display: none; padding: 2em; border: 2px solid black; border-radius: 5px; width: 300px; margin: 100px auto; text-align: center; box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);">
 	<h2>RDM53 Access</h2>
 	<p>Authentication required</p>
-	<input type="password" id="accessCode" placeholder="Enter Access Code" style="width: 80%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-	<button type="button" onclick="checkAccess()">Login</button>
+	<form onsubmit="event.preventDefault(); checkAccess();">
+		<input type="password" id="accessCode" aria-label="Access Code" placeholder="Enter Access Code" style="width: 80%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+		<button type="submit">Login</button>
+	</form>
 	<p id="loginError" style="color: red; display: none; margin-top: 10px;">Invalid access code.</p>
 </div>
 
