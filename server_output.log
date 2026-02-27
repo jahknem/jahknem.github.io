@@ -1,0 +1,8 @@
+127.0.0.1 - - [27/Feb/2026 18:24:23] code 404, message File not found
+127.0.0.1 - - [27/Feb/2026 18:24:23] "GET /WebsocketTerminalRDM.html HTTP/1.1" 404 -
+127.0.0.1 - - [27/Feb/2026 18:25:18] code 404, message File not found
+127.0.0.1 - - [27/Feb/2026 18:25:18] "GET /WebsocketTerminalRDM.html HTTP/1.1" 404 -
+127.0.0.1 - - [27/Feb/2026 18:27:29] "GET /rdm53/ HTTP/1.1" 200 -
+127.0.0.1 - - [27/Feb/2026 18:27:29] "GET /assets/css/RDM53Style.css HTTP/1.1" 200 -
+127.0.0.1 - - [27/Feb/2026 18:27:29] code 404, message File not found
+127.0.0.1 - - [27/Feb/2026 18:27:29] "GET /assets/js/RDM53TerminalScripts.js HTTP/1.1" 404 -
