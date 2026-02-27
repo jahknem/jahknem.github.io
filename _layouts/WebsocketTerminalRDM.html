@@ -13,13 +13,13 @@
 </head>
 <body>
 
-<div id="LoginContainer" style="display: none; padding: 2em; border: 2px solid black; border-radius: 5px; width: 300px; margin: 100px auto; text-align: center; box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);">
+<form id="LoginContainer" onsubmit="event.preventDefault(); checkAccess()" style="display: none; padding: 2em; border: 2px solid black; border-radius: 5px; width: 300px; margin: 100px auto; text-align: center; box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);">
 	<h2>RDM53 Access</h2>
 	<p>Authentication required</p>
-	<input type="password" id="accessCode" placeholder="Enter Access Code" style="width: 80%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-	<button type="button" onclick="checkAccess()">Login</button>
-	<p id="loginError" style="color: red; display: none; margin-top: 10px;">Invalid access code.</p>
-</div>
+	<input type="password" id="accessCode" aria-label="Access Code" placeholder="Enter Access Code" style="width: 80%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+	<button type="submit">Login</button>
+	<p id="loginError" role="alert" style="color: red; display: none; margin-top: 10px;">Invalid access code.</p>
+</form>
 
 <div id="PageContent" style="display: none;">
 	
