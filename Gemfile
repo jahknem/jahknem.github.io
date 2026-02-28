@@ -17,3 +17,5 @@ group :jekyll_plugins do
 end
 
 gem "webrick", "~> 1.9"
+
+gem "minimal-mistakes-jekyll", "~> 4.27"
